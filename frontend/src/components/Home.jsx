@@ -185,23 +185,29 @@ function Home() {
               </li>
 
               <li className="nav-item ms-lg-3">
-                {user ? (
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => {
-                      localStorage.removeItem("user");
-                      localStorage.removeItem("token");
-                      navigate("/login");
-                    }}
-                  >
-                    Logout
-                  </button>
-                ) : (
-                  <Link className="btn btn-warning" to="/login">
-                    Login
-                  </Link>
-                )}
-              </li>
+  {user ? (
+    <button
+      className="btn btn-danger"
+      onClick={() => {
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        navigate("/login");
+      }}
+    >
+      Logout
+    </button>
+  ) : (
+    <div className="d-flex gap-2">
+      <Link to="/register" className="btn btn-warning">
+        Register
+      </Link>
+
+      <Link to="/login" className="btn btn-outline-light">
+        Login
+      </Link>
+    </div>
+  )}
+</li>
 
             </ul>
           </div>
