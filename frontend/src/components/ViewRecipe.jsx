@@ -12,7 +12,7 @@ export default function ViewRecipe() {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/recipes/${id}`);
+        const res = await axios.get(`https://food-recipe-1-845a.onrender.com/api/recipes/${id}`);
         setRecipe(res.data);
       } catch (error) {
         console.log("Recipe fetch error:", error.response?.data || error.message);
