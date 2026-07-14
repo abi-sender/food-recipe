@@ -27,7 +27,7 @@ function Home() {
 
   const fetchRecipes = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/recipes");
+      const res = await axios.get("https://food-recipe-1-845a.onrender.com/api/recipes");
       setFeaturedRecipes(res.data);
     } catch (err) {
       console.log(err);
@@ -39,7 +39,7 @@ function Home() {
   const fetchFavorites = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/favorites/${userId}`
+        `https://food-recipe-1-845a.onrender.com/api/favorites/${userId}`
       );
 
       setFavoriteDocs(res.data);
@@ -66,7 +66,7 @@ function Home() {
 
         if (favoriteToDelete) {
           await axios.delete(
-            `http://localhost:5000/api/favorites/${favoriteToDelete._id}`
+            `https://food-recipe-1-845a.onrender.com/api/favorites/${favoriteToDelete._id}`
           );
 
           setFavorites((prev) => prev.filter((id) => id !== recipeId));
@@ -77,7 +77,7 @@ function Home() {
         }
       } else {
         const res = await axios.post(
-          "http://localhost:5000/api/favorites",
+          "https://food-recipe-1-845a.onrender.com/api/favorites",
           {
             userId,
             recipeId,
